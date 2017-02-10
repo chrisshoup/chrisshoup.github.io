@@ -13,10 +13,14 @@ var shoup = {
 
 	'init': function() {
 		$('#shoup').show().animate({ 'marginTop': '75px', opacity: 1 }, shoup.fadeShort, function() {
-			var domainParts = document.domain.toLowerCase().split('.')
+			var page = null, tmp = null, domainParts = document.domain.toLowerCase().split('.')
 			shoup.initLetters();
 			if(domainParts.length == 3 && $.inArray(domainParts[0], ['www', 'index', 'mail']) < 0)
-				shoup.initPage(domainParts[0]);
+				page = domainParts[0];
+			else if(location.hash && (tmp=location.hash.match(/^#?([a-z0-9_-]+)$/i)))
+				page = tmp[1];
+			if(page)
+				shoup.initPage(page);
 			else
 				$('#shoup-info').fadeIn(shoup.fadeShort);
 		});
@@ -89,6 +93,7 @@ var shoup = {
 	}
 }
 $(document).ready(function() {
+	document.domain = 'shoup.org';
 	var img = new Image();
 	img.onload = shoup.init;
 	img.onerror = function() { $('body').html($('noscript').html()); }
