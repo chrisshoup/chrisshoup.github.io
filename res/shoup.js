@@ -17,7 +17,7 @@ var shoup = {
 			shoup.initLetters();
 			if(domainParts.length == 3 && $.inArray(domainParts[0], ['www', 'index', 'mail']) < 0)
 				page = domainParts[0];
-			else if(location.hash && (tmp=location.hash.match(/^#?([a-z0-9_-]+)$/i)))
+			else if(location.hash && (tmp=location.hash.match(/^#?([a-z0-9_-]+)/i)))
 				page = tmp[1];
 			if(page)
 				shoup.initPage(page);
