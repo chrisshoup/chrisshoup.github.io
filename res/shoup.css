@@ -1,0 +1,117 @@
+html, body {
+	padding:0;
+	margin:0;
+}
+body {
+	background-color:#2d1f17;
+	background-image: url(/res/pattern.jpg);
+	background-repeat: repeat;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
+}
+#shoup, #shoup-noscript {
+	position:relative;
+	background-image: url(/res/shoup.png);
+	width: 869px;
+	height: 416px;
+	margin-bottom:75px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#shoup {
+	display:none;
+	margin-top:-425px;
+	opacity: 0;
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	filter: alpha(opacity=0);
+}
+#shoup-noscript {
+	display:block;
+	margin-top:75px;
+}
+#shoup-info, #shoup-info-noscript, #shoup-page {
+	color:#fff;
+	background-color:#000;
+	background: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	margin:auto;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	filter: alpha(opacity=20);
+	text-align: center;
+	font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+	padding-top:40px;
+	padding-bottom:40px;
+	margin-bottom: 50px;
+}
+#shoup-info, #shoup-info-noscript {
+	font-size: 38px;
+	line-height: 32px;
+	font-weight: bold;
+}
+#shoup-page {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: normal;
+}
+#shoup-info, #shoup-page { display:none; }
+#shoup-info-noscript { display:block; }
+#shoup-page a, #shoup-info a, #shoup-info-noscript a {
+	transition: all 0.5s ease;
+	color:#ddd;
+	text-decoration:none;
+/*
+	-webkit-animation: shoup-pulse 3s ease-out;
+	-webkit-animation-iteration-count: infinite; 
+*/
+	opacity:0.8;
+}
+#shoup-page a:hover, #shoup-info a:hover, #shoup-info-noscript a:hover {
+	color:#fff;
+	text-shadow: 3px 3px #444;
+	-webkit-animation: none;
+}
+.shoup-pic {
+	width:137px;
+	height:189px;
+	display:none;
+	background-repeat: no-repeat;
+}
+@-webkit-keyframes shoup-pulse {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.5; }
+	100% { opacity: 1.0; }
+}
+#s, #h, #o, #u, #p {
+	display:none;
+	position:absolute;
+	top: 116px;
+	width:137px;
+	height:189px;
+	background-repeat: no-repeat;
+}
+#s {
+	background-image: url(/res/s.png);
+	left: 88px;
+}
+#h {
+	background-image: url(/res/h.png);
+	left: 228px;
+}
+#o {
+	background-image: url(/res/o.png);
+	left: 368px;
+}
+#u {
+	background-image: url(/res/u.png);
+	left: 507px;
+}
+#p {
+	background-image: url(/res/p.png);
+	left: 647px;
+}
