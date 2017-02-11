@@ -46,8 +46,8 @@ var shoup = {
 		setTimeout(shoup.picLoad, shoup.picShowTime);
 	},
 	'initPage': function(page) {
-		document.title += ': ' + page;
-		$.get(page + '.htm?' + Math.random(), function(html) {
+		document.title += ': ' + page.replace('_','.').replace('-',' ');
+		$.get('htm/' + page + '.htm?' + Math.random(), function(html) {
 			$('#shoup-page').html(html).slideDown();
 		}, 'html').fail(function() {
 			$('#shoup-page').html('No content found for: "<b>' + page + '</b>"').slideDown();
