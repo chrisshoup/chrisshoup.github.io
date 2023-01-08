@@ -3,7 +3,7 @@ var shoup = {
 	'letters': 'shoup',
 	'letterCount': 0,
 	'letterNextArray': [],
-	'picTotal': 6,
+	'picTotal': 8,
 	'picImages': [],
 	'picCurrent': '',
 	'picShowTime': 5000,
