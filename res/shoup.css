@@ -1,117 +1,81 @@
-html, body {
-	padding:0;
-	margin:0;
+@keyframes a_shoup_drop_frame {
+	0% { margin-top: -425px; opacity: 0; }
+	50% { opacity: 1; }
+	100% { margin-top: 75px; opacity: 1; }
 }
+@keyframes a_shoup_fade_in {
+	from { opacity: 0; }
+	to {opacity: 1; }
+}
+@keyframes a_shoup_photo_fade_in {
+	0%, 100% { opacity: 0; }
+	25%,75% { opacity: 1; }
+}
+@keyframes a_shoup_hue_rotate {
+	from { filter: hue-rotate(0deg); }
+	to { filter: hue-rotate(360deg); }
+}
+html, body { padding: 0; margin: 0; }
 body {
-	background-color:#2d1f17;
 	background-image: url(/res/pattern.jpg);
+	background-color: #2d1f17;
 	background-repeat: repeat;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select:none;
-	user-select:none;
-	-o-user-select:none;
+	user-select: none;
 }
-#shoup, #shoup-noscript {
-	position:relative;
-	background-image: url(/res/shoup.png);
-	width: 869px;
-	height: 416px;
-	margin-bottom:75px;
-	margin-left: auto;
-	margin-right: auto;
+a { 
+	transition: all 0.5s ease;
+	color: #ddd;
+	text-decoration: none;
+	opacity: 0.8;
+	padding: 0 25px 0 25px;
+}
+a:hover {
+	color: #fff;
+	text-shadow: 3px 3px #444;
 }
 #shoup {
-	display:none;
-	margin-top:-425px;
+	position: relative;
 	opacity: 0;
-	-moz-opacity: 0;
-	-khtml-opacity: 0;
-	filter: alpha(opacity=0);
+	width: 869px;
+	height: 416px;
+	background-image: url(/res/shoup.png);
+	margin: -425px auto 75px auto;
+	animation: a_shoup_drop_frame 2s ease 0s 1 normal forwards;
 }
-#shoup-noscript {
-	display:block;
-	margin-top:75px;
-}
-#shoup-info, #shoup-info-noscript, #shoup-page {
-	color:#fff;
-	background-color:#000;
-	background: rgba(0, 0, 0, 0.4);
+#shoup-info {
+	opacity: 0;
 	width: 100%;
-	margin:auto;
-	opacity: 0.8;
-	-moz-opacity: 0.8;
-	-khtml-opacity: 0.8;
-	filter: alpha(opacity=20);
+	color: #fff;
+	background-color: #000;
+	background: rgba(0,0,0,0.4);
 	text-align: center;
-	font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
-	padding-top:40px;
-	padding-bottom:40px;
-	margin-bottom: 50px;
-}
-#shoup-info, #shoup-info-noscript {
 	font-size: 38px;
-	line-height: 32px;
 	font-weight: bold;
+	font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+	line-height: 32px;
+	padding: 40px 0 40px 0;
+	margin: 0 auto 50px auto;
+	animation: a_shoup_fade_in 1s ease 1.8s 1 normal forwards
 }
-#shoup-page {
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: normal;
-}
-#shoup-info, #shoup-page { display:none; }
-#shoup-info-noscript { display:block; }
-#shoup-page a, #shoup-info a, #shoup-info-noscript a {
-	transition: all 0.5s ease;
-	color:#ddd;
-	text-decoration:none;
-/*
-	-webkit-animation: shoup-pulse 3s ease-out;
-	-webkit-animation-iteration-count: infinite; 
-*/
-	opacity:0.8;
-}
-#shoup-page a:hover, #shoup-info a:hover, #shoup-info-noscript a:hover {
-	color:#fff;
-	text-shadow: 3px 3px #444;
-	-webkit-animation: none;
-}
-.shoup-pic {
-	width:137px;
-	height:189px;
-	display:none;
+#shoup > div, #shoup > div > div {
+	opacity: 0;
+	width: 137px;
+	height: 189px;
 	background-repeat: no-repeat;
 }
-@-webkit-keyframes shoup-pulse {
-	0% { opacity: 1.0; }
-	50% { opacity: 0.5; }
-	100% { opacity: 1.0; }
-}
-#s, #h, #o, #u, #p {
-	display:none;
-	position:absolute;
+#shoup > div {
+	position: absolute;
 	top: 116px;
-	width:137px;
-	height:189px;
-	background-repeat: no-repeat;
+	animation: a_shoup_fade_in 1s ease 1.5s 1 normal forwards, a_shoup_hue_rotate 20s ease 0s infinite normal none;
 }
-#s {
-	background-image: url(/res/s.png);
-	left: 88px;
-}
-#h {
-	background-image: url(/res/h.png);
-	left: 228px;
-}
-#o {
-	background-image: url(/res/o.png);
-	left: 368px;
-}
-#u {
-	background-image: url(/res/u.png);
-	left: 507px;
-}
-#p {
-	background-image: url(/res/p.png);
-	left: 647px;
-}
+#shoup > div > div { animation: a_shoup_photo_fade_in 10s linear 5s 1 normal forwards; }
+#s { background-image: url(/res/s.png); animation-delay: 1.2s; left: 88px; }
+#h { background-image: url(/res/h.png); animation-delay: 1.4s; left: 228px; }
+#o { background-image: url(/res/o.png); animation-delay: 1.6s; left: 368px; }
+#u { background-image: url(/res/u.png); animation-delay: 1.8s; left: 507px; }
+#p { background-image: url(/res/p.png); animation-delay: 2.0s; left: 647px; }
+#s div { background-image: url(/pic/s.png); animation-delay: 5s !important; }
+#h div { background-image: url(/pic/h.png); animation-delay: 15s !important; }
+#o div { background-image: url(/pic/o.png); animation-delay: 25s !important; }
+#u div { background-image: url(/pic/u.png); animation-delay: 35s !important; }
+#p div { background-image: url(/pic/p.png); animation-delay: 45s !important; }
