@@ -1,7 +1,7 @@
 @keyframes a_shoup_drop_frame {
-	0% { margin-top: -425px; opacity: 0; }
+	0% { top: -200%; opacity: 0; }
 	50% { opacity: 1; }
-	100% { margin-top: 20vh; opacity: 1; }
+	100% { top: -15vmin; opacity: 1; }
 }
 @keyframes a_shoup_fade_in {
 	from { opacity: 0; }
@@ -34,12 +34,16 @@ a:hover {
 	text-shadow: 3px 3px #444;
 }
 #shoup {
-	position: relative;
+	position: absolute;
 	opacity: 0;
 	width: 869px;
 	height: 416px;
+	top: -200%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 	background-image: url(/res/shoup.png);
-	margin: -425px auto 50px auto;
 	animation: a_shoup_drop_frame 2s ease 0s 1 normal forwards;
 }
 #shoup-info {
@@ -47,6 +51,9 @@ a:hover {
 	bottom: 0;
 	opacity: 0;
 	width: 100%;
+	height: 15vmin;
+	line-height: 15vmin;
+	min-height: 15vmin;
 	color: #fff;
 	background-color: #000;
 	background: rgba(0,0,0,0.4);
@@ -54,8 +61,6 @@ a:hover {
 	font-size: 38px;
 	font-weight: bold;
 	font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
-	line-height: 15vmin;
-	height: 15vmin;
 	margin: auto;
 	animation: a_shoup_fade_in 1s ease 1.8s 1 normal forwards
 }
