@@ -16,10 +16,18 @@
 	to { filter: hue-rotate(360deg); }
 }
 html, body { padding: 0; margin: 0; }
+body, #shoup {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 body {
 	background-image: url(/res/pattern.jpg);
 	background-color: #2d1f17;
 	background-repeat: repeat;
+	box-shadow: inset 0 0 15vmin 0 #000;
 	user-select: none;
 	transition: all 0.5s ease;
 }
@@ -34,14 +42,10 @@ a:hover {
 	text-shadow: 3px 3px #444;
 }
 #shoup {
-	position: absolute;
 	opacity: 0;
 	width: 869px;
 	height: 416px;
 	top: -200%;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	margin: auto;
 	background-image: url(/res/shoup.png);
 	animation: a_shoup_drop_frame 2s ease 0s 1 normal forwards;
